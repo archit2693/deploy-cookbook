@@ -1,7 +1,0 @@
----
-hostname: 127.0.0.1
-port: '2222'
-username: vagrant
-ssh_key: "/Users/architjoshi/Documents/CookBook/test/.kitchen/kitchen-vagrant/default-ubuntu-bionic64/.vagrant/machines/default/virtualbox/private_key"
-last_action: converge
-last_error: 

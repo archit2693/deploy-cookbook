@@ -1,3 +1,0 @@
-I, [2018-06-28T18:01:05.685810 #18297]  INFO -- Kitchen: -----> Starting Kitchen (v1.20.0)
-I, [2018-06-28T18:01:07.888089 #18297]  INFO -- Kitchen: -----> Converging <default-ubuntu-bionic64>...
-I, [2018-06-28T18:02:01.834894 #18297]  INFO -- Kitchen: -----> Kitchen is finished. (0m56.15s)
