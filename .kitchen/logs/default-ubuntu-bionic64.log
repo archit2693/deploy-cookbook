@@ -1,0 +1,163 @@
+I, [2018-06-28T18:01:07.888174 #18297]  INFO -- default-ubuntu-bionic64: -----> Converging <default-ubuntu-bionic64>...
+I, [2018-06-28T18:01:07.888820 #18297]  INFO -- default-ubuntu-bionic64: Preparing files for transfer
+I, [2018-06-28T18:01:07.889008 #18297]  INFO -- default-ubuntu-bionic64: Preparing dna.json
+I, [2018-06-28T18:01:07.889621 #18297]  INFO -- default-ubuntu-bionic64: Resolving cookbook dependencies with Berkshelf 6.3.1...
+I, [2018-06-28T18:01:08.046349 #18297]  INFO -- default-ubuntu-bionic64: Removing non-cookbook files before transfer
+I, [2018-06-28T18:01:08.058566 #18297]  INFO -- default-ubuntu-bionic64: Preparing validation.pem
+I, [2018-06-28T18:01:08.059326 #18297]  INFO -- default-ubuntu-bionic64: Preparing client.rb
+I, [2018-06-28T18:01:08.567005 #18297]  INFO -- default-ubuntu-bionic64: -----> Chef Omnibus installation detected (install only if missing)
+I, [2018-06-28T18:01:08.582511 #18297]  INFO -- default-ubuntu-bionic64: Transferring files to <default-ubuntu-bionic64>
+I, [2018-06-28T18:01:10.044129 #18297]  INFO -- default-ubuntu-bionic64: Starting Chef Client, version 14.2.0
+I, [2018-06-28T18:01:11.443843 #18297]  INFO -- default-ubuntu-bionic64: resolving cookbooks for run list: ["test::install"]
+I, [2018-06-28T18:01:11.568712 #18297]  INFO -- default-ubuntu-bionic64: Synchronizing Cookbooks:
+I, [2018-06-28T18:01:11.595100 #18297]  INFO -- default-ubuntu-bionic64:   - test (0.1.0)
+I, [2018-06-28T18:01:11.621633 #18297]  INFO -- default-ubuntu-bionic64:   - tar (2.1.1)
+I, [2018-06-28T18:01:11.647438 #18297]  INFO -- default-ubuntu-bionic64:   - build-essential (8.1.1)
+I, [2018-06-28T18:01:11.656240 #18297]  INFO -- default-ubuntu-bionic64:   - postgresql (7.0.0)
+I, [2018-06-28T18:01:11.679994 #18297]  INFO -- default-ubuntu-bionic64:   - openssl (8.1.2)
+I, [2018-06-28T18:01:11.699262 #18297]  INFO -- default-ubuntu-bionic64:   - seven_zip (3.0.0)
+I, [2018-06-28T18:01:11.724478 #18297]  INFO -- default-ubuntu-bionic64:   - mingw (2.0.2)
+I, [2018-06-28T18:01:11.740831 #18297]  INFO -- default-ubuntu-bionic64:   - windows (4.3.2)
+I, [2018-06-28T18:01:11.741446 #18297]  INFO -- default-ubuntu-bionic64: Installing Cookbook Gems:
+I, [2018-06-28T18:01:11.759771 #18297]  INFO -- default-ubuntu-bionic64: Compiling Cookbooks...
+I, [2018-06-28T18:01:11.859970 #18297]  INFO -- default-ubuntu-bionic64: Converging 3 resources
+I, [2018-06-28T18:01:11.860623 #18297]  INFO -- default-ubuntu-bionic64: Recipe: test::install
+I, [2018-06-28T18:01:11.863849 #18297]  INFO -- default-ubuntu-bionic64:   * file[hello.txt] action create (up to date)
+I, [2018-06-28T18:01:11.865636 #18297]  INFO -- default-ubuntu-bionic64:   * apt_update[update] action update
+I, [2018-06-28T18:01:11.866439 #18297]  INFO -- default-ubuntu-bionic64:     - force update new lists of packages
+I, [2018-06-28T18:01:11.868237 #18297]  INFO -- default-ubuntu-bionic64:     * directory[/var/lib/apt/periodic] action create (up to date)
+I, [2018-06-28T18:01:11.870283 #18297]  INFO -- default-ubuntu-bionic64:     * directory[/etc/apt/apt.conf.d] action create (up to date)
+I, [2018-06-28T18:01:11.872210 #18297]  INFO -- default-ubuntu-bionic64:     * file[/etc/apt/apt.conf.d/15update-stamp] action create_if_missing (up to date)
+I, [2018-06-28T18:01:13.628547 #18297]  INFO -- default-ubuntu-bionic64:     * execute[apt-get -q update] action run
+I, [2018-06-28T18:01:13.630227 #18297]  INFO -- default-ubuntu-bionic64:       - execute apt-get -q update
+I, [2018-06-28T18:01:13.631812 #18297]  INFO -- default-ubuntu-bionic64:   
+I, [2018-06-28T18:01:13.634778 #18297]  INFO -- default-ubuntu-bionic64:   * postgresql_server_install[My Postgresql Server install] action install
+I, [2018-06-28T18:01:13.636983 #18297]  INFO -- default-ubuntu-bionic64:     * postgresql_client_install[Install PostgreSQL Client] action install
+I, [2018-06-28T18:01:13.639715 #18297]  INFO -- default-ubuntu-bionic64:       * postgresql_repository[Add downloads.postgresql.org repository] action add
+I, [2018-06-28T18:01:16.131730 #18297]  INFO -- default-ubuntu-bionic64:  * apt_package[apt-transport-https] action install
+I, [2018-06-28T18:01:16.133063 #18297]  INFO -- default-ubuntu-bionic64:    - install version 1.6.1 of package apt-transport-https
+I, [2018-06-28T18:01:16.138532 #18297]  INFO -- default-ubuntu-bionic64:  * apt_repository[postgresql_org_repository] action add
+I, [2018-06-28T18:01:17.476563 #18297]  INFO -- default-ubuntu-bionic64:    * remote_file[/tmp/kitchen/cache/https___download_postgresql_org_pub_repos_apt_ACCC4CF8_asc] action create
+I, [2018-06-28T18:01:17.479404 #18297]  INFO -- default-ubuntu-bionic64:      - create new file /tmp/kitchen/cache/https___download_postgresql_org_pub_repos_apt_ACCC4CF8_asc
+I, [2018-06-28T18:01:17.479931 #18297]  INFO -- default-ubuntu-bionic64:      - update content in file /tmp/kitchen/cache/https___download_postgresql_org_pub_repos_apt_ACCC4CF8_asc from none to 014406
+I, [2018-06-28T18:01:17.480894 #18297]  INFO -- default-ubuntu-bionic64:      --- /tmp/kitchen/cache/https___download_postgresql_org_pub_repos_apt_ACCC4CF8_asc	2018-06-28 12:31:17.470258523 +0000
+I, [2018-06-28T18:01:17.482252 #18297]  INFO -- default-ubuntu-bionic64:      +++ /tmp/kitchen/cache/.chef-https___download_postgresql_org_pub_repos_apt_ACCC4CF8_asc20180628-6008-mnxvlm	2018-06-28 12:31:17.442258523 +0000
+I, [2018-06-28T18:01:17.482695 #18297]  INFO -- default-ubuntu-bionic64:      @@ -1 +1,78 @@
+I, [2018-06-28T18:01:17.483132 #18297]  INFO -- default-ubuntu-bionic64:      +-----BEGIN PGP PUBLIC KEY BLOCK-----
+I, [2018-06-28T18:01:17.483545 #18297]  INFO -- default-ubuntu-bionic64:      +
+I, [2018-06-28T18:01:17.484035 #18297]  INFO -- default-ubuntu-bionic64:      +mQINBE6XR8IBEACVdDKT2HEH1IyHzXkb4nIWAY7echjRxo7MTcj4vbXAyBKOfjja
+I, [2018-06-28T18:01:17.484486 #18297]  INFO -- default-ubuntu-bionic64:      +UrBEJWHN6fjKJXOYWXHLIYg0hOGeW9qcSiaa1/rYIbOzjfGfhE4x0Y+NJHS1db0V
+I, [2018-06-28T18:01:17.484977 #18297]  INFO -- default-ubuntu-bionic64:      +G6GUj3qXaeyqIJGS2z7m0Thy4Lgr/LpZlZ78Nf1fliSzBlMo1sV7PpP/7zUO+aA4
+I, [2018-06-28T18:01:17.485421 #18297]  INFO -- default-ubuntu-bionic64:      +bKa8Rio3weMXQOZgclzgeSdqtwKnyKTQdXY5MkH1QXyFIk1nTfWwyqpJjHlgtwMi
+I, [2018-06-28T18:01:17.485850 #18297]  INFO -- default-ubuntu-bionic64:      +c2cxjqG5nnV9rIYlTTjYG6RBglq0SmzF/raBnF4Lwjxq4qRqvRllBXdFu5+2pMfC
+I, [2018-06-28T18:01:17.486181 #18297]  INFO -- default-ubuntu-bionic64:      +IZ10HPRdqDCTN60DUix+BTzBUT30NzaLhZbOMT5RvQtvTVgWpeIn20i2NrPWNCUh
+I, [2018-06-28T18:01:17.486670 #18297]  INFO -- default-ubuntu-bionic64:      +hj490dKDLpK/v+A5/i8zPvN4c6MkDHi1FZfaoz3863dylUBR3Ip26oM0hHXf4/2U
+I, [2018-06-28T18:01:17.487225 #18297]  INFO -- default-ubuntu-bionic64:      +A/oA4pCl2W0hc4aNtozjKHkVjRx5Q8/hVYu+39csFWxo6YSB/KgIEw+0W8DiTII3
+I, [2018-06-28T18:01:17.487737 #18297]  INFO -- default-ubuntu-bionic64:      +RQj/OlD68ZDmGLyQPiJvaEtY9fDrcSpI0Esm0i4sjkNbuuh0Cvwwwqo5EF1zfkVj
+I, [2018-06-28T18:01:17.488117 #18297]  INFO -- default-ubuntu-bionic64:      +Tqz2REYQGMJGc5LUbIpk5sMHo1HWV038TWxlDRwtOdzw08zQA6BeWe9FOokRPeR2
+I, [2018-06-28T18:01:17.488172 #18297]  INFO -- default-ubuntu-bionic64:      +AqhyaJJwOZJodKZ76S+LDwFkTLzEKnYPCzkoRwLrEdNt1M7wQBThnC5z6wARAQAB
+I, [2018-06-28T18:01:17.488241 #18297]  INFO -- default-ubuntu-bionic64:      +tBxQb3N0Z3JlU1FMIERlYmlhbiBSZXBvc2l0b3J5iQJOBBMBCAA4AhsDBQsJCAcD
+I, [2018-06-28T18:01:17.488530 #18297]  INFO -- default-ubuntu-bionic64:      +BRUKCQgLBRYCAwEAAh4BAheAFiEEuXsK/KoaR/BE8kSgf8x9RqzMTPgFAlhtCD8A
+I, [2018-06-28T18:01:17.488897 #18297]  INFO -- default-ubuntu-bionic64:      +CgkQf8x9RqzMTPgECxAAk8uL+dwveTv6eH21tIHcltt8U3Ofajdo+D/ayO53LiYO
+I, [2018-06-28T18:01:17.488950 #18297]  INFO -- default-ubuntu-bionic64:      +xi27kdHD0zvFMUWXLGxQtWyeqqDRvDagfWglHucIcaLxoxNwL8+e+9hVFIEskQAY
+I, [2018-06-28T18:01:17.488979 #18297]  INFO -- default-ubuntu-bionic64:      +kVToBCKMXTQDLarz8/J030Pmcv3ihbwB+jhnykMuyyNmht4kq0CNgnlcMCdVz0d3
+I, [2018-06-28T18:01:17.489003 #18297]  INFO -- default-ubuntu-bionic64:      +z/09puryIHJrD+A8y3TD4RM74snQuwc9u5bsckvRtRJKbP3GX5JaFZAqUyZNRJRJ
+I, [2018-06-28T18:01:17.489281 #18297]  INFO -- default-ubuntu-bionic64:      +Tn2OQRBhCpxhlZ2afkAPFIq2aVnEt/Ie6tmeRCzsW3lOxEH2K7MQSfSu/kRz7ELf
+I, [2018-06-28T18:01:17.489794 #18297]  INFO -- default-ubuntu-bionic64:      +Cz3NJHj7rMzC+76Rhsas60t9CjmvMuGONEpctijDWONLCuch3Pdj6XpC+MVxpgBy
+I, [2018-06-28T18:01:17.489845 #18297]  INFO -- default-ubuntu-bionic64:      +2VUdkunb48YhXNW0jgFGM/BFRj+dMQOUbY8PjJjsmVV0joDruWATQG/M4C7O8iU0
+I, [2018-06-28T18:01:17.489883 #18297]  INFO -- default-ubuntu-bionic64:      +B7o6yVv4m8LDEN9CiR6r7H17m4xZseT3f+0QpMe7iQjz6XxTUFRQxXqzmNnloA1T
+I, [2018-06-28T18:01:17.489923 #18297]  INFO -- default-ubuntu-bionic64:      +7VjwPqIIzkj/u0V8nICG/ktLzp1OsCFatWXh7LbU+hwYl6gsFH/mFDqVxJ3+DKQi
+I, [2018-06-28T18:01:17.489946 #18297]  INFO -- default-ubuntu-bionic64:      +vyf1NatzEwl62foVjGUSpvh3ymtmtUQ4JUkNDsXiRBWczaiGSuzD9Qi0ONdkAX3b
+I, [2018-06-28T18:01:17.489971 #18297]  INFO -- default-ubuntu-bionic64:      +ewqmN4TfE+XIpCPxxHXwGq9Rv1IFjOdCX0iG436GHyTLC1tTUIKF5xV4Y0+cXIOI
+I, [2018-06-28T18:01:17.490004 #18297]  INFO -- default-ubuntu-bionic64:      +RgQQEQgABgUCTpdI7gAKCRDFr3dKWFELWqaPAKD1TtT5c3sZz92Fj97KYmqbNQZP
+I, [2018-06-28T18:01:17.490770 #18297]  INFO -- default-ubuntu-bionic64:      ++ACfSC6+hfvlj4GxmUjp1aepoVTo3weJAhwEEAEIAAYFAk6XSQsACgkQTFprqxLS
+I, [2018-06-28T18:01:17.490820 #18297]  INFO -- default-ubuntu-bionic64:      +p64F8Q//cCcutwrH50UoRFejg0EIZav6LUKejC6kpLeubbEtuaIH3r2zMblPGc4i
+I, [2018-06-28T18:01:17.490857 #18297]  INFO -- default-ubuntu-bionic64:      ++eMQKo/PqyQrceRXeNNlqO6/exHozYi2meudxa6IudhwJIOn1MQykJbNMSC2sGUp
+I, [2018-06-28T18:01:17.491109 #18297]  INFO -- default-ubuntu-bionic64:      +1W5M1N5EYgt4hy+qhlfnD66LR4G+9t5FscTJSy84SdiOuqgCOpQmPkVRm1HX5X1+
+I, [2018-06-28T18:01:17.491339 #18297]  INFO -- default-ubuntu-bionic64:      +dmnzMOCk5LHHQuiacV0qeGO7JcBCVEIDr+uhU1H2u5GPFNHm5u15n25tOxVivb94
+I, [2018-06-28T18:01:17.491843 #18297]  INFO -- default-ubuntu-bionic64:      +xg6NDjouECBH7cCVuW79YcExH/0X3/9G45rjdHlKPH1OIUJiiX47OTxdG3dAbB4Q
+I, [2018-06-28T18:01:17.491905 #18297]  INFO -- default-ubuntu-bionic64:      +fnViRJhjehFscFvYWSqXo3pgWqUsEvv9qJac2ZEMSz9x2mj0ekWxuM6/hGWxJdB+
+I, [2018-06-28T18:01:17.491932 #18297]  INFO -- default-ubuntu-bionic64:      ++985rIelPmc7VRAXOjIxWknrXnPCZAMlPlDLu6+vZ5BhFX0Be3y38f7GNCxFkJzl
+I, [2018-06-28T18:01:17.491966 #18297]  INFO -- default-ubuntu-bionic64:      +hWZ4Cj3WojMj+0DaC1eKTj3rJ7OJlt9S9xnO7OOPEUTGyzgNIDAyCiu8F4huLPaT
+I, [2018-06-28T18:01:17.491992 #18297]  INFO -- default-ubuntu-bionic64:      +ape6RupxOMHZeoCVlqx3ouWctelB2oNXcxxiQ/8y+21aHfD4n/CiIFwDvIQjl7dg
+I, [2018-06-28T18:01:17.492389 #18297]  INFO -- default-ubuntu-bionic64:      +mT3u5Lr6yxuosR3QJx1P6rP5ZrDTP9khT30t+HZCbvs5Pq+v/9m6XDmi+NlU7Zuh
+I, [2018-06-28T18:01:17.492784 #18297]  INFO -- default-ubuntu-bionic64:      +Ehy97tL3uBDgoL4b/5BpFL5U9nruPlQzGq1P9jj40dxAaDAX/WKJAj0EEwEIACcC
+I, [2018-06-28T18:01:17.493175 #18297]  INFO -- default-ubuntu-bionic64:      +GwMFCwkIBwMFFQoJCAsFFgIDAQACHgECF4AFAlB5KywFCQPDFt8ACgkQf8x9RqzM
+I, [2018-06-28T18:01:17.493252 #18297]  INFO -- default-ubuntu-bionic64:      +TPhuCQ//QAjRSAOCQ02qmUAikT+mTB6baOAakkYq6uHbEO7qPZkv4E/M+HPIJ4wd
+I, [2018-06-28T18:01:17.493279 #18297]  INFO -- default-ubuntu-bionic64:      +nBNeSQjfvdNcZBA/x0hr5EMcBneKKPDj4hJ0panOIRQmNSTThQw9OU351gm3YQct
+I, [2018-06-28T18:01:17.493489 #18297]  INFO -- default-ubuntu-bionic64:      +AMPRUu1fTJAL/AuZUQf9ESmhyVtWNlH/56HBfYjE4iVeaRkkNLJyX3vkWdJSMwC/
+I, [2018-06-28T18:01:17.493783 #18297]  INFO -- default-ubuntu-bionic64:      +LO3Lw/0M3R8itDsm74F8w4xOdSQ52nSRFRh7PunFtREl+QzQ3EA/WB4AIj3VohIG
+I, [2018-06-28T18:01:17.494481 #18297]  INFO -- default-ubuntu-bionic64:      +kWDfPFCzV3cyZQiEnjAe9gG5pHsXHUWQsDFZ12t784JgkGyO5wT26pzTiuApWM3k
+I, [2018-06-28T18:01:17.494541 #18297]  INFO -- default-ubuntu-bionic64:      +/9V+o3HJSgH5hn7wuTi3TelEFwP1fNzI5iUUtZdtxbFOfWMnZAypEhaLmXNkg4zD
+I, [2018-06-28T18:01:17.494582 #18297]  INFO -- default-ubuntu-bionic64:      +kH44r0ss9fR0DAgUav1a25UnbOn4PgIEQy2fgHKHwRpCy20d6oCSlmgyWsR40EPP
+I, [2018-06-28T18:01:17.494629 #18297]  INFO -- default-ubuntu-bionic64:      +YvtGq49A2aK6ibXmdvvFT+Ts8Z+q2SkFpoYFX20mR2nsF0fbt1lfH65P64dukxeR
+I, [2018-06-28T18:01:17.494665 #18297]  INFO -- default-ubuntu-bionic64:      +GteWIeNakDD40bAAOH8+OaoTGVBJ2ACJfLVNM53PEoftavAwUYMrR910qvwYfd/4
+I, [2018-06-28T18:01:17.494727 #18297]  INFO -- default-ubuntu-bionic64:      +6rh46g1Frr9SFMKYE9uvIJIgDsQB3QBp71houU4H55M5GD8XURYs+bfiQpJG1p7e
+I, [2018-06-28T18:01:17.494768 #18297]  INFO -- default-ubuntu-bionic64:      +B8e5jZx1SagNWc4XwL2FzQ9svrkbg1Y+359buUiP7T6QXX2zY++JAj0EEwEIACcC
+I, [2018-06-28T18:01:17.495485 #18297]  INFO -- default-ubuntu-bionic64:      +GwMFCwkIBwMFFQoJCAsFFgIDAQACHgECF4AFAlEqbZUFCQg2wEEACgkQf8x9RqzM
+I, [2018-06-28T18:01:17.495552 #18297]  INFO -- default-ubuntu-bionic64:      +TPhFMQ//WxAfKMdpSIA9oIC/yPD/dJpY/+DyouOljpE6MucMy/ArBECjFTBwi/j9
+I, [2018-06-28T18:01:17.495594 #18297]  INFO -- default-ubuntu-bionic64:      +NYM4ynAk34IkhuNexc1i9/05f5RM6+riLCLgAOsADDbHD4miZzoSxiVr6GQ3YXMb
+I, [2018-06-28T18:01:17.495632 #18297]  INFO -- default-ubuntu-bionic64:      +OGld9kV9Sy6mGNjcUov7iFcf5Hy5w3AjPfKuR9zXswyfzIU1YXObiiZT38l55pp/
+I, [2018-06-28T18:01:17.495678 #18297]  INFO -- default-ubuntu-bionic64:      +BSgvGVQsvbNjsff5CbEKXS7q3xW+WzN0QWF6YsfNVhFjRGj8hKtHvwKcA02wwjLe
+I, [2018-06-28T18:01:17.495736 #18297]  INFO -- default-ubuntu-bionic64:      +LXVTm6915ZUKhZXUFc0vM4Pj4EgNswH8Ojw9AJaKWJIZmLyW+aP+wpu6YwVCicxB
+I, [2018-06-28T18:01:17.495775 #18297]  INFO -- default-ubuntu-bionic64:      +Y59CzBO2pPJDfKFQzUtrErk9irXeuCCLesDyirxJhv8o0JAvmnMAKOLhNFUrSQ2m
+I, [2018-06-28T18:01:17.496293 #18297]  INFO -- default-ubuntu-bionic64:      ++3EnF7zhfz70gHW+EG8X8mL/EN3/dUM09j6TVrjtw43RLxBzwMDeariFF9yC+5bL
+I, [2018-06-28T18:01:17.496342 #18297]  INFO -- default-ubuntu-bionic64:      +tnGgxjsB9Ik6GV5v34/NEEGf1qBiAzFmDVFRZlrNDkq6gmpvGnA5hUWNr+y0i01L
+I, [2018-06-28T18:01:17.496375 #18297]  INFO -- default-ubuntu-bionic64:      +jGyaLSWHYjgw2UEQOqcUtTFK9MNzbZze4mVaHMEz9/aMfX25R6qbiNqCChveIm8m
+I, [2018-06-28T18:01:17.496403 #18297]  INFO -- default-ubuntu-bionic64:      +Yr5Ds2zdZx+G5bAKdzX7nx2IUAxFQJEE94VLSp3npAaTWv3sHr7dR8tSyUJ9poDw
+I, [2018-06-28T18:01:17.496431 #18297]  INFO -- default-ubuntu-bionic64:      +gw4W9BIcnAM7zvFYbLF5FNggg/26njHCCN70sHt8zGxKQINMc6SJAj0EEwEIACcC
+I, [2018-06-28T18:01:17.496455 #18297]  INFO -- default-ubuntu-bionic64:      +GwMFCwkIBwMFFQoJCAsFFgIDAQACHgECF4AFAlLpFRkFCQ6EJy0ACgkQf8x9RqzM
+I, [2018-06-28T18:01:17.496479 #18297]  INFO -- default-ubuntu-bionic64:      +TPjOZA//Zp0e25pcvle7cLc0YuFr9pBv2JIkLzPm83nkcwKmxaWayUIG4Sv6pH6h
+I, [2018-06-28T18:01:17.505300 #18297]  INFO -- default-ubuntu-bionic64:      +m8+S/CHQij/yFCX+o3ngMw2J9HBUvafZ4bnbI0RGJ70GsAwraQ0VlkIfg7GUw3Tz
+I, [2018-06-28T18:01:17.505380 #18297]  INFO -- default-ubuntu-bionic64:      +voGYO42rZTru9S0K/6nFP6D1HUu+U+AsJONLeb6oypQgInfXQExPZyliUnHdipei
+I, [2018-06-28T18:01:17.505416 #18297]  INFO -- default-ubuntu-bionic64:      +4WR1YFW6sjSkZT/5C3J1wkAvPl5lvOVthI9Zs6bZlJLZwusKxU0UM4Btgu1Sf3nn
+I, [2018-06-28T18:01:17.505448 #18297]  INFO -- default-ubuntu-bionic64:      +JcHmzisixwS9PMHE+AgPWIGSec/N27a0KmTTvImV6K6nEjXJey0K2+EYJuIBsYUN
+I, [2018-06-28T18:01:17.505480 #18297]  INFO -- default-ubuntu-bionic64:      +orOGBwDFIhfRk9qGlpgt0KRyguV+AP5qvgry95IrYtrOuE7307SidEbSnvO5ezNe
+I, [2018-06-28T18:01:17.505509 #18297]  INFO -- default-ubuntu-bionic64:      +mE7gT9Z1tM7IMPfmoKph4BfpNoH7aXiQh1Wo+ChdP92hZUtQrY2Nm13cmkxYjQ4Z
+I, [2018-06-28T18:01:17.505537 #18297]  INFO -- default-ubuntu-bionic64:      +gMWfYMC+DA/GooSgZM5i6hYqyyfAuUD9kwRN6BqTbuAUAp+hCWYeN4D88sLYpFh3
+I, [2018-06-28T18:01:17.505919 #18297]  INFO -- default-ubuntu-bionic64:      +paDYNKJ+Gf7Yyi6gThcV956RUFDH3ys5Dk0vDL9NiWwdebWfRFbzoRM3dyGP889a
+I, [2018-06-28T18:01:17.505969 #18297]  INFO -- default-ubuntu-bionic64:      +OyLzS3mh6nHzZrNGhW73kslSQek8tjKrB+56hXOnb4HaElTZGDvD5wmrrhN94kby
+I, [2018-06-28T18:01:17.506002 #18297]  INFO -- default-ubuntu-bionic64:      +Gtz3cydIohvNO9d90+29h0eGEDYti7j7maHkBKUAwlcPvMg5m3Y=
+I, [2018-06-28T18:01:17.506032 #18297]  INFO -- default-ubuntu-bionic64:      +=DA1T
+I, [2018-06-28T18:01:17.506069 #18297]  INFO -- default-ubuntu-bionic64:      +-----END PGP PUBLIC KEY BLOCK-----
+I, [2018-06-28T18:01:17.506442 #18297]  INFO -- default-ubuntu-bionic64:      - change mode from '' to '0644'
+I, [2018-06-28T18:01:17.797018 #18297]  INFO -- default-ubuntu-bionic64:    * execute[apt-key add /tmp/kitchen/cache/https___download_postgresql_org_pub_repos_apt_ACCC4CF8_asc] action run
+I, [2018-06-28T18:01:17.797806 #18297]  INFO -- default-ubuntu-bionic64:      - execute apt-key add /tmp/kitchen/cache/https___download_postgresql_org_pub_repos_apt_ACCC4CF8_asc
+I, [2018-06-28T18:01:17.897553 #18297]  INFO -- default-ubuntu-bionic64:    * execute[apt-cache gencaches] action run
+I, [2018-06-28T18:01:17.898995 #18297]  INFO -- default-ubuntu-bionic64:      - execute apt-cache gencaches
+I, [2018-06-28T18:01:17.900435 #18297]  INFO -- default-ubuntu-bionic64:    * execute[apt-cache gencaches] action nothing (skipped due to action :nothing)
+I, [2018-06-28T18:01:17.901428 #18297]  INFO -- default-ubuntu-bionic64:    * apt_update[postgresql_org_repository] action nothing (skipped due to action :nothing)
+I, [2018-06-28T18:01:17.903916 #18297]  INFO -- default-ubuntu-bionic64:    * file[/etc/apt/sources.list.d/postgresql_org_repository.list] action create
+I, [2018-06-28T18:01:17.906206 #18297]  INFO -- default-ubuntu-bionic64:      - create new file /etc/apt/sources.list.d/postgresql_org_repository.list
+I, [2018-06-28T18:01:17.906638 #18297]  INFO -- default-ubuntu-bionic64:      - update content in file /etc/apt/sources.list.d/postgresql_org_repository.list from none to 4b7e4e
+I, [2018-06-28T18:01:17.906998 #18297]  INFO -- default-ubuntu-bionic64:      --- /etc/apt/sources.list.d/postgresql_org_repository.list	2018-06-28 12:31:17.898258523 +0000
+I, [2018-06-28T18:01:17.907506 #18297]  INFO -- default-ubuntu-bionic64:      +++ /etc/apt/sources.list.d/.chef-postgresql_org_repository20180628-6008-1y8pku4.list	2018-06-28 12:31:17.898258523 +0000
+I, [2018-06-28T18:01:17.907962 #18297]  INFO -- default-ubuntu-bionic64:      @@ -1 +1,2 @@
+I, [2018-06-28T18:01:17.910532 #18297]  INFO -- default-ubuntu-bionic64:      +deb      "https://download.postgresql.org/pub/repos/apt/" bionic-pgdg main 9.6
+I, [2018-06-28T18:01:17.911059 #18297]  INFO -- default-ubuntu-bionic64:      - change mode from '' to '0644'
+I, [2018-06-28T18:01:17.911544 #18297]  INFO -- default-ubuntu-bionic64:      - change owner from '' to 'root'
+I, [2018-06-28T18:01:17.912679 #18297]  INFO -- default-ubuntu-bionic64:      - change group from '' to 'root'
+I, [2018-06-28T18:01:18.789004 #18297]  INFO -- default-ubuntu-bionic64:    * execute[apt-cache gencaches] action run
+I, [2018-06-28T18:01:18.790152 #18297]  INFO -- default-ubuntu-bionic64:      - execute apt-cache gencaches
+I, [2018-06-28T18:01:18.793689 #18297]  INFO -- default-ubuntu-bionic64:    * apt_update[postgresql_org_repository] action update
+I, [2018-06-28T18:01:18.794505 #18297]  INFO -- default-ubuntu-bionic64:      - force update new lists of packages
+I, [2018-06-28T18:01:18.796600 #18297]  INFO -- default-ubuntu-bionic64:      * directory[/var/lib/apt/periodic] action create (up to date)
+I, [2018-06-28T18:01:18.798989 #18297]  INFO -- default-ubuntu-bionic64:      * directory[/etc/apt/apt.conf.d] action create (up to date)
+I, [2018-06-28T18:01:18.801125 #18297]  INFO -- default-ubuntu-bionic64:      * file[/etc/apt/apt.conf.d/15update-stamp] action create_if_missing (up to date)
+I, [2018-06-28T18:01:22.642152 #18297]  INFO -- default-ubuntu-bionic64:      * execute[apt-get -q update] action run
+I, [2018-06-28T18:01:22.643064 #18297]  INFO -- default-ubuntu-bionic64:        - execute apt-get -q update
+I, [2018-06-28T18:01:22.643738 #18297]  INFO -- default-ubuntu-bionic64:    
+I, [2018-06-28T18:01:22.643813 #18297]  INFO -- default-ubuntu-bionic64:  
+I, [2018-06-28T18:01:22.644715 #18297]  INFO -- default-ubuntu-bionic64:       
+I, [2018-06-28T18:01:34.153632 #18297]  INFO -- default-ubuntu-bionic64:       * apt_package[postgresql-client-9.6] action install
+I, [2018-06-28T18:01:34.155447 #18297]  INFO -- default-ubuntu-bionic64:  - install version 9.6.9-2.pgdg18.04+1 of package postgresql-client-9.6
+I, [2018-06-28T18:01:34.155645 #18297]  INFO -- default-ubuntu-bionic64:     
+I, [2018-06-28T18:02:01.752654 #18297]  INFO -- default-ubuntu-bionic64:     * apt_package[postgresql-9.6] action install
+I, [2018-06-28T18:02:01.753178 #18297]  INFO -- default-ubuntu-bionic64:       - install version 9.6.9-2.pgdg18.04+1 of package postgresql-9.6
+I, [2018-06-28T18:02:01.753379 #18297]  INFO -- default-ubuntu-bionic64:   
+I, [2018-06-28T18:02:01.806421 #18297]  INFO -- default-ubuntu-bionic64: 
+I, [2018-06-28T18:02:01.806494 #18297]  INFO -- default-ubuntu-bionic64: Running handlers:
+I, [2018-06-28T18:02:01.806536 #18297]  INFO -- default-ubuntu-bionic64: Running handlers complete
+I, [2018-06-28T18:02:01.806868 #18297]  INFO -- default-ubuntu-bionic64: Chef Client finished, 16/25 resources updated in 51 seconds
+I, [2018-06-28T18:02:01.815581 #18297]  INFO -- default-ubuntu-bionic64: Downloading files from <default-ubuntu-bionic64>
+I, [2018-06-28T18:02:01.834670 #18297]  INFO -- default-ubuntu-bionic64: Finished converging <default-ubuntu-bionic64> (0m53.95s).

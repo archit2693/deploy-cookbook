@@ -1,0 +1,21 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu/bionic64
+
+suites:
+  - name: default
+    run_list:
+      - recipe[test::install]
+    verifier:
+      inspec_tests:
+        - test/integration/install
+    attributes:
