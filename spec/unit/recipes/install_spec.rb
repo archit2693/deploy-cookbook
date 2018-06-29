@@ -5,7 +5,7 @@ describe 'test::install' do
   before(:each) do
     @chef_runner = ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04') do |node|
     end
-    allow_any_instance_of(Chef::HTTP).to receive(:get).and_return("{\"tag_name\":\"V1.0\"}")
+    allow_any_instance_of(Chef::HTTP).to receive(:get).and_return("{\"tag_name\":\"v1.0\"}")
     @response = @chef_runner.converge(described_recipe)
   end
 
@@ -39,7 +39,16 @@ describe 'test::install' do
 
   context 'user' do
     it 'should create a user with attributes' do
-      expect(@response).to create_user('godeploy').with(uid: 1111, home: '/opt/godeploy', manage_home: true, shell: '/bin/bash')
+      expect(@response).to create_user('deploy').with(uid: 1111, home: '/home/deploy', manage_home: true, shell: '/bin/bash')
     end
   end
+
+  context 'directory' do
+    it 'should create a release dir /home/deploy/v1.0' do
+      expect(@response).to create_directory('/home/deploy/v1.0').with(
+        owner:     'deploy',
+        recursive: true
+      )
+	  end
+	end
 end
