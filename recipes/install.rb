@@ -18,6 +18,7 @@ end
 
 gem_package 'bundler'
 gem_package 'rails'
+gem_package 'rake'
 
 user app_name do
   uid 1111
@@ -48,7 +49,7 @@ template script_location do
   source "deploy_start.sh.erb"
   mode   "0755"
   owner app_name
-  variables( app_name: app_name, command_name: command_name )
+  variables( app_name: app_name, release_name: release_name, command_name: command_name )
   notifies :restart, "service[godeploy]", :delayed
 end
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'test::install' do
+describe 'godeploy::install' do
 
   before(:each) do
     @chef_runner = ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04') do |node|
@@ -37,6 +37,10 @@ describe 'test::install' do
 
     it 'should install rails' do
       expect(@response).to install_gem_package('rails')
+    end
+
+    it 'should install rake' do
+      expect(@response).to install_gem_package('rake')
     end
   end
 
