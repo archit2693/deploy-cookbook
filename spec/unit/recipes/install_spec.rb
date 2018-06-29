@@ -62,4 +62,12 @@ describe 'test::install' do
       )
 	  end
 	end
+
+	context 'script file' do
+    it 'should create a deploy_start.sh file in dir /home/deploy/' do
+      expect(@response).to create_template('/home/deploy/deploy_start.sh').with(
+        owner:     'deploy'
+      )
+	  end
+	end
 end

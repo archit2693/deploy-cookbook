@@ -1,6 +1,8 @@
 app_name = 'deploy'
 release_file = Github.new('ritik02/Deploy').get_release_file
 release_name = Github.new('ritik02/Deploy').get_release_name
+script_location = '/home/deploy/deploy_start.sh'
+command_name = 'bundle exec rails server'
 
 apt_repository 'brightbox-ruby' do
   uri 'ppa:brightbox/ruby-ng'
@@ -34,4 +36,17 @@ end
 file "/etc/default/#{app_name}.conf" do
   owner app_name
   content node['environment_variables'].map {|k,v| "#{k}=#{v}"}.join("\n")
+end
+
+tar_extract release_file  do
+  target_dir "/home/#{app_name}/#{release_name}"
+  download_dir "/home/#{app_name}"
+  user "#{app_name}"
+end
+
+template script_location do
+  source "deploy_start.sh.erb"
+  mode   "0755"
+  owner app_name
+  variables( app_name: app_name, command_name: command_name )
 end
