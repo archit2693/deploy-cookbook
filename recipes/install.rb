@@ -16,3 +16,11 @@ end
 
 gem_package 'bundler'
 gem_package 'rails'
+
+user 'godeploy' do
+  uid 1111
+  home "/opt/godeploy"
+  manage_home true
+  shell '/bin/bash'
+  action :create
+end

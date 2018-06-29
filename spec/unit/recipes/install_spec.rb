@@ -36,4 +36,10 @@ describe 'test::install' do
       expect(@response).to install_gem_package('rails')
     end
   end
+
+  context 'user' do
+    it 'should create a user with attributes' do
+      expect(@response).to create_user('godeploy').with(uid: 1111, home: '/opt/godeploy', manage_home: true, shell: '/bin/bash')
+    end
+  end
 end
