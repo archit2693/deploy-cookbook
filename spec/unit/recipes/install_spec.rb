@@ -5,8 +5,8 @@ describe 'test::install' do
   before(:each) do
     @chef_runner = ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04') do |node|
     end
-    @response = @chef_runner.converge(described_recipe)
     allow_any_instance_of(Chef::HTTP).to receive(:get).and_return("{\"tag_name\":\"V1.0\"}")
+    @response = @chef_runner.converge(described_recipe)
   end
 
 	context 'apt_repository' do
@@ -24,6 +24,16 @@ describe 'test::install' do
   context 'package install' do
     it 'should install packages software-properties-common, ruby2.5, nodejs, build-essential, zlib1g-dev, liblzma-dev, libpq-dev' do
       expect(@response).to install_package(%w(software-properties-common ruby2.5 nodejs build-essential zlib1g-dev liblzma-dev libpq-dev))
+    end
+  end
+
+  context 'gem_package' do
+    it 'should install bundler' do
+      expect(@response).to install_gem_package('bundler')
+    end
+
+    it 'should install rails' do
+      expect(@response).to install_gem_package('rails')
     end
   end
 end

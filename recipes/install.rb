@@ -13,3 +13,6 @@ end
 package %w(software-properties-common ruby2.5 nodejs build-essential zlib1g-dev liblzma-dev libpq-dev) do
   action :install
 end
+
+gem_package 'bundler'
+gem_package 'rails'
