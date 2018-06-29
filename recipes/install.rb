@@ -9,3 +9,7 @@ end
 apt_update 'update' do
   action :update
 end
+
+package %w(software-properties-common ruby2.5 nodejs build-essential zlib1g-dev liblzma-dev libpq-dev) do
+  action :install
+end
