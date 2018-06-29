@@ -1,0 +1,12 @@
+[Unit]
+Description=systemd script for running <%=@app_name%>
+
+[Service]
+Restart=on-failure
+RestartSec=2
+EnvironmentFile=/etc/default/<%=@app_name%>.conf
+ExecStart=/bin/bash -lc <%=@script_location%>
+User=<%=@app_name%>
+
+[Install]
+WantedBy=multi-user.target

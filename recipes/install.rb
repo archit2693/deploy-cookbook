@@ -49,11 +49,24 @@ template script_location do
   mode   "0755"
   owner app_name
   variables( app_name: app_name, command_name: command_name )
+  notifies :restart, "service[godeploy]", :delayed
 end
 
 template "/etc/systemd/system/godeploy.service" do
   source "systemd.erb"
   owner app_name
   mode "00644"
-  variables( app_name: app_name, app_home: app_name, script_location: script_location )
+  variables( app_name: app_name, app_home: app_name, script_location: script_location)
+  notifies :run, "execute[systemctl-daemon-reload]", :immediately
+  notifies :restart, "service[godeploy]", :delayed
+end
+
+execute 'systemctl-daemon-reload' do
+  command '/bin/systemctl --system daemon-reload'
+end
+
+service "godeploy" do
+  supports :status => true, :start => true, :restart => true, :stop => true
+  provider Chef::Provider::Service::Systemd
+  action [:enable, :restart]
 end
