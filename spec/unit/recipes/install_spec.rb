@@ -70,4 +70,12 @@ describe 'test::install' do
       )
 	  end
 	end
+
+	context 'service file' do
+    it 'should create a godeploy.service file in dir /etc/systemd/system' do
+      expect(@response).to create_template('/etc/systemd/system/godeploy.service').with(
+        owner:     'deploy'
+      )
+	  end
+	end
 end

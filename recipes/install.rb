@@ -50,3 +50,10 @@ template script_location do
   owner app_name
   variables( app_name: app_name, command_name: command_name )
 end
+
+template "/etc/systemd/system/godeploy.service" do
+  source "systemd.erb"
+  owner app_name
+  mode "00644"
+  variables( app_name: app_name, app_home: app_name, script_location: script_location )
+end
