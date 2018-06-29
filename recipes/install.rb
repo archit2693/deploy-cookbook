@@ -30,3 +30,8 @@ directory "/home/#{app_name}/#{release_name}" do
   recursive true
   action :create
 end
+
+file "/etc/default/#{app_name}.conf" do
+  owner app_name
+  content node['environment_variables'].map {|k,v| "#{k}=#{v}"}.join("\n")
+end

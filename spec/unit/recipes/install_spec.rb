@@ -4,6 +4,9 @@ describe 'test::install' do
 
   before(:each) do
     @chef_runner = ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04') do |node|
+    	node.automatic['environment_variables'] =  {
+                       Sample_key: 'value'
+                     }
     end
     allow_any_instance_of(Chef::HTTP).to receive(:get).and_return("{\"tag_name\":\"v1.0\"}")
     @response = @chef_runner.converge(described_recipe)
@@ -48,6 +51,14 @@ describe 'test::install' do
       expect(@response).to create_directory('/home/deploy/v1.0').with(
         owner:     'deploy',
         recursive: true
+      )
+	  end
+	end
+
+	context 'config file' do
+    it 'should create a deploy.conf file in dir /etc/default/' do
+      expect(@response).to create_file('/etc/default/deploy.conf').with(
+        owner:     'deploy'
       )
 	  end
 	end
