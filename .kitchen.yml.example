@@ -1,0 +1,56 @@
+---
+driver:
+  name: vagrant
+  network:
+   - ["forwarded_port", {guest: 3333, host: 3000}]
+   - ["private_network", {ip: "192.168.33.33"}]
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu/bionic64
+
+suites:
+  - name: default
+    run_list:
+      - recipe[godeploy::postgres_server]
+      - recipe[godeploy::install]
+    verifier:
+      inspec_tests:
+        - test/integration/install
+    attributes:
+      {
+        app_name: 'deploy',
+        command_name: 'bundle exec rails server -e production',
+        script_location: '/home/deploy/deploy_start.sh',
+        database_root_password: 'postgres',
+        postgres_server_version: '9.5',
+        app_db_user: 'deploy',
+        app_db_password: 'postgres',
+        app_db_name: 'godeploy',
+        environment_variables: {
+          CAS_LOGIN_URL:               "https://example.com/cas/login",
+          DB_USER:                     'deploy',
+          DB_HOST:                     'localhost',
+          DB_PASSWORD:                 'postgres',
+          DB_POOL:                     '10',
+          DB_TIMEOUT:                  '5000',
+          CAS_BASE_URL:                'https://example.com/cas',
+          SMTP_ADDRESS:                'smtp.gmail.com',
+          SMTP_PORT:                   '587',
+          SMTP_DOMAIN:                 'domain.com',
+          SMTP_USER_NAME:              'example@domain.com',
+          SMTP_PASSWORD:               'password',
+          DIFF_BASE_URL:               'http://192.168.33.33:3000',
+          DOMAIN_BASE_URL:             'http://192.168.33.33:3000',
+          GITLAB_BASE_URL:             'https://www.gitlab.com/',
+          JIRA_BASE_URL:               'https://appname.atlassian.net/',
+          JIRA_PROJECT_KEY:            'DEMO',
+          JIRA_ISSUE_TYPE:             'Task',
+          SLACK_WEBHOOK:               'https://hooks.slack.com/services/key/key/key'
+          }
+    }

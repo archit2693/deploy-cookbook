@@ -1,5 +1,5 @@
 DEPENDENCIES
-  godeploy
+  godeploy-cookbook
     path: .
     metadata: true
   postgresql (= 7.0.0)
@@ -8,7 +8,7 @@ GRAPH
   build-essential (8.1.1)
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
-  godeploy (0.1.0)
+  godeploy-cookbook (0.3.17)
     postgresql (>= 0.0.0)
     tar (>= 0.0.0)
   mingw (2.0.2)
